@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<head>
+	<title>Duet</title>
+
+	<link rel="stylesheet" type="text/css" href="fonts/Font-Awesome/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/font.css">
+	<link rel="stylesheet" type="text/css" href="css/flip.css">
+	<link rel="stylesheet" type="text/css" href="css/tooltip.css">
+	<link rel="stylesheet" type="text/css" href="css/jquery-ui.min.css">
+
+	<script src="vender/d3.v4.min.js"></script>
+	<script src="vender/jquery-3.2.1.min.js"></script>
+	<script src="vender/jquery-ui.min.js"></script>
+	<script src="vender/jquery.mousewheel.min.js"></script>
+	<script src="vender/flip.js"></script>
+	<script src="vender/FontLoader.js"></script>
+</head>
+
+<body>
+	<div id="col1" class="noselection">
+
+		<div id="load-data-menu" class="ui-view remove-tag-zone">
+
+			<div class="container">
+
+				<input type="file" id="file-selector" />
+
+				<label for="file-selector">
+					<svg xmlns="http://www.w3.org/2000/svg" width="20" height="17" viewBox="0 0 20 17">
+						<path d="M10 0l-5.2 4.9h3.3v5.1h3.8v-5.1h3.3l-5.2-4.9zm9.3 11.5l-3.2-2.1h-2l3.4 2.6h-3.5c-.1 0-.2.1-.2.1l-.8 2.3h-6l-.8-2.2c-.1-.1-.1-.2-.2-.2h-3.6l3.4-2.6h-2l-3.2 2.1c-.4.3-.7 1-.6 1.5l.6 3.1c.1.5.7.9 1.2.9h16.3c.6 0 1.1-.4 1.3-.9l.6-3.1c.1-.5-.2-1.2-.7-1.5z"/>
+					</svg>
+					<span>Choose a file</span>
+				</label>
+				
+			</div>
+
+		</div>
+
+		<div id="attribute-list" class="ui-view">
+			<div class="search-box remove-tag-zone">
+				<span class="fa fa-search"></span>
+				<input type="text">
+			</div>
+			<div class="list">
+				<div class="id header expanded"><svg></svg></div>
+				<div class="id content"><svg></svg></div>
+
+				<div class="categorical header expanded"><svg></svg></div>
+				<div class="categorical content"><svg></svg></div>
+
+				<div class="numerical header expanded"><svg></svg></div>
+				<div class="numerical content"><svg></svg></div>
+			</div>
+		</div>
+
+		<div id="data-table" class="ui-view">
+			<div class="search-box remove-tag-zone">
+				<span class="fa fa-search"></span>
+				<input type="text">
+			</div>
+			<div class="header"><svg></svg></div>
+			<div class="content"><div class="wrapper"><svg></svg></div></div>
+			<div class="footer"><svg></svg></div>
+		</div>
+
+	</div>
+
+	<div id="col2" class="noselection">
+
+		<div id="comparison-panel" class="ui-view">
+			<div class="shelves"><svg></svg></div>
+			<div class="results remove-tag-zone"></div>
+		</div>
+
+	</div>
+
+	<div id="col3" class="noselection remove-tag-zone">
+
+		<div id="relationship-map" class="ui-view">
+
+			<svg></svg>
+			<span class="button fa fa-expand"></span>
+			<span class="button fa fa-remove"></span>
+			<span class="button fa fa-font"></span>
+			<span class="button fa fa-eraser"></span>
+
+			<div id="stored-attributes-panel" class="ui-view">
+				<div class="header">
+					<span>Stored Recommendations</span>
+					<span class="fa fa-close"></span>
+				</div>
+
+				<div class="content"></div>
+
+				<div class="footer">
+					<div class="search-box">
+						<span class="fa fa-search"></span>
+						<input type="text">
+					</div>
+
+					<div class="filters">
+						<span class="button s">10</span>
+						<span class="button n">10</span>
+						<span class="button d">10</span>
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+	</div>
+
+	<div id="value-discretizer" class="ui-view noselection">
+		<div class="header">
+			<span>Value Discretizer</span>
+		</div>
+
+		<div class="content">
+			<div class="number-line"><svg></svg></div>
+			<div class="text-input"></div>
+		</div>
+
+		<div class="footer">
+
+			<div class="cancel-btn button">
+				<i class="fa fa-remove"></i>Cancel
+			</div>
+
+			<div class="confirm-btn button">
+				<i class="fa fa-check"></i>Confirm
+			</div>
+
+		</div>
+	</div>
+
+	<div id="group-container" class="ui-view noselection">
+		<div class="header">
+			<input type="text" class="not-remove-group-container">
+		</div>
+
+		<div class="content">
+			<div class="container">
+				<svg class="not-remove-group-container"></svg>
+			</div>
+		</div>
+	</div>
+
+	<div id="draggable-tag" class="noselection not-remove-group-container"></div>
+
+	<div id="system-reasoning-panel" class="ui-view noselection"></div>
+
+	<div id="tooltip"></div>
+
+	<div id="long-title-tooltip"></div>
+
+	<script src="js/start.js"></script>
+	<script src="js/fileSelectorHandler.js"></script>
+	<script src="js/database.js"></script>
+	<script src="js/viewRenderer.js"></script>
+	<script src="js/dataTable.js"></script>
+	<script src="js/attributeList.js"></script>
+	<script src="js/valueDiscretizer.js"></script>
+	<script src="js/comparisonShelves.js"></script>
+	<script src="js/draggableTag.js"></script>
+	<script src="js/systemReasoningPanel.js"></script>
+	<script src="js/textGenerator.js"></script>
+	<script src="js/groupContainer.js"></script>
+	<script src="js/body.js"></script>
+	<script src="js/graphStructure.js"></script>
+	<script src="js/graphVisualizer.js"></script>
+	<script src="js/graphSimilarityOperator.js"></script>
+	<script src="js/relationshipMap.js"></script>
+	<script src="js/storedAttributesPanel.js"></script>
+	<script src="js/barChartHelper.js"></script>
+	<script src="js/longTitleTooltip.js"></script>
+	<script src="js/changeGroupNameManager.js"></script>
+
+	<script src="js/operator.js"></script>
+	<script src="js/twoGroupOperator.js"></script>
+	<script src="js/twoGroupOneAttrOperator.js"></script>
+	<script src="js/oneGroupOneAttrOperator.js"></script>
+	<script src="js/oneGroupOperator.js"></script>
+
+	<script src="js/card.js"></script>
+	<script src="js/twoGroupCard.js"></script>
+	<script src="js/twoGroupOneAttrCard.js"></script>
+	<script src="js/oneGroupOneAttrCard.js"></script>
+	<script src="js/oneGroupCard.js"></script>
+	<script src="js/sameCard.js"></script>
+	<script src="js/noObjectsCard.js"></script>
+
+	<script src="js/helper.js"></script>
+</body>
