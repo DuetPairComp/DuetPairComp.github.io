@@ -242,6 +242,7 @@ $(function() {
 	RelationshipMap.init();
 	StoredAttributesPanel.init();
 	LongTitleTooltip.init();
+	ColourManager.init();
 	Body.init();
 
 	// render interface when the essential font is loaded
