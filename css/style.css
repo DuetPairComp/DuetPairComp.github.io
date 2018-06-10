@@ -39,23 +39,68 @@ div.noselection {
 
 /* load data menu */
 
-#load-data-menu {
+#setting-menu {
     position: relative;
+    font-size: 0px;
 }
 
-#load-data-menu .container {
+#setting-menu .header {
     position: absolute;
-    left: 50%;
-    top: 50%;
-    
-    -webkit-transform: translate(-50%, -50%);
-    -moz-transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    -o-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
+    left: 7px;
+    top: 3px;
+
+    font-size: 13px;
+    font-weight: bold;
 }
 
-/* file-selector */
+#setting-menu .color-menu {
+    position: absolute;
+    top: 31px;
+    left: 15px;
+    font-size: 13px;
+}
+
+#setting-menu .color-menu .title {
+    padding-right: 3px;
+}
+
+#setting-menu .color-menu select {
+    width: 90px;
+    outline: none;
+    font-family: 'News Cycle', Arial;
+}
+
+#setting-menu .file-menu {
+    position: absolute;
+    top: 61px;
+    left: 15px;
+    font-size: 13px;
+}
+
+#setting-menu .file-menu .title {
+    padding-right: 1px;
+}
+
+#setting-menu .file-menu #file-name {
+    font-style: italic;
+    padding-right: 6px;
+}
+
+#setting-menu .change-file-button {
+    font-size: 11px;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 2px;
+    border-radius: 2px;
+    opacity: 0.3;
+    color: white;
+    background-color: black;
+    cursor: pointer;
+}
+
+#setting-menu .change-file-button:hover {
+    opacity: 1;
+}
 
 #file-selector {
     width: 0.1px;
@@ -64,29 +109,6 @@ div.noselection {
     overflow: hidden;
     position: absolute;
     z-index: -1;
-}
-
-#file-selector + label {
-    max-width: 80%;
-    font-size: 15px;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    cursor: pointer;
-    color: #aaaaaa;
-}
-
-#file-selector + label svg {
-    width: 18px;
-    height: 18px;
-    vertical-align: middle;
-    fill: currentColor;
-    margin-top: -6px;
-    margin-right: 3px;
-}
-
-#file-selector.selected + label,
-#file-selector + label:hover {
-    color: black;
 }
 
 /* data table */

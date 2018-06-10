@@ -5,7 +5,7 @@ var col1Width = 200;
 var col2Width = 300;
 var col3Width = "calc(100% - 533px)";
 
-var loadDataMenu = "100px";
+var settingMenuHeight = 100;
 
 var attributeListHeight = "calc(50% - 66.5px)";
 var attributeListMinHeight = 50;
@@ -67,11 +67,11 @@ $(function() {
 		.css("width", col3Width)
 		.css("height", full);
 
-	// load data menu
-	$("#load-data-menu")
+	// setting menu
+	$("#setting-menu")
 		.css("width", full)
-		.css("height", loadDataMenu)
-		.css("min-height", loadDataMenu)
+		.css("height", settingMenuHeight)
+		.css("min-height", settingMenuHeight)
 		.css("margin-bottom", margin + 1);
 
 	// attribute list

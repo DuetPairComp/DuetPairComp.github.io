@@ -2,7 +2,7 @@
 
 ;(function (document, window, index) {
 	var fileSelectorEl = document.getElementById("file-selector");
-	var label = fileSelectorEl.nextElementSibling;
+	var label = document.getElementById("file-name");
 	var labelVal = label.innerHTML;
 	var reader = new FileReader();
 
@@ -15,28 +15,23 @@
   	};
 
 	fileSelectorEl.onclick = function() {
-		// highlight the label on click
-		fileSelectorEl.classList.add("selected");
+		fileSelectorEl.classList.add("selected"); // highlight the label on click
 	}
 	
 	document.body.onfocus = function() {
-		// remove label highlight on return focus to document
-		fileSelectorEl.classList.remove("selected"); 
+		fileSelectorEl.classList.remove("selected"); // remove label highlight on return focus to document
 	}
 
 	fileSelectorEl.onchange = function(e) {
-		// change file name on select file
 		var fileName = e.target.value.split( '\\' ).pop();
-		fileName = (fileName.length > 10) ? fileName.substring(0, 10) + "..." : fileName;
 
-		if (fileName)
-			label.querySelector("span").innerHTML = fileName;
-		else
-			label.innerHTML = labelVal;
+		if (fileName !== "") {
+			var file = this.files[0];
+			var shortFileName = (fileName.length > 15) ? fileName.substring(0, 15) + "..." : fileName;
 
-		// load file into the database
-		var file = this.files[0];
-    	reader.readAsText(file);
+			label.innerHTML = shortFileName;
+			reader.readAsText(file);
+		}
 	}
 
 }(document, window, 0));
