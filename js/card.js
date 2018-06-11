@@ -570,14 +570,12 @@ var Card = {
 				var attributeCount = isOneGroup ? card.newCardData[attributeListName][groupName].length : card.newCardData.configOnShelves.attribute.length;
 				var attributeText = (attributeCount > 1) ? "attributes" : "attribute";
 				var text = attributeCount + " " + className + " " + attributeText;
-				var textColor = (className == "similar") ? "#83AF9B" : "#FE4365";
 
 				var countText = d3.select(this).append("text")
 					.attr("class", "count")
 					.attr("x", rowWidth / 2 + 15)
 					.attr("y", self.GroupList.Group.height / 2)
 					.attr("alignment-baseline", "middle")
-					.style("fill", textColor)
 					.style("font-family", "Arial")
 					.style("font-size", "11px")
 					.text(text);

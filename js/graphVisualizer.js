@@ -483,9 +483,6 @@ var GraphVisualizer = {
 	},
 	Message: {
 		showTime: 500,
-		similarColour: "#83AF9B",
-		differentColour: "#F67280",
-		neitherSimilarNorDifferentColour: "#A9A9A9",
 
 		display: function(messageInfo) {
 			var self = GraphVisualizer;
@@ -502,15 +499,15 @@ var GraphVisualizer = {
 			// determine text and color
 			if (similarOrDifferent == "similar") {
 				similarOrDifferentText = "similar";
-				textColour = self.Message.similarColour;
+				textColour = ColourManager.similarColour;
 			}
 			else if (similarOrDifferent == "different") {
 				similarOrDifferentText = "different";
-				textColour = self.Message.differentColour;
+				textColour = ColourManager.differentColour;
 			}
 			else {
 				similarOrDifferentText = "neither similar nor different";
-				textColour = self.Message.neitherSimilarNorDifferentColour;
+				textColour = ColourManager.neitherSimilarNorDifferentColour;
 			}
 
 			// highlight link object
