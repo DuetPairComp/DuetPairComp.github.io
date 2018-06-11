@@ -253,7 +253,7 @@ var GraphStructure = {
 			.range([0, GraphVisualizer.graphRadius]);
 		var colourScale = d3.scaleLinear()
 			.domain([0, numberOfNotExcludedAttributes / 2, numberOfNotExcludedAttributes])
-			.range(["#83AF9B", "#FFFFFF", "#F67280"]);
+			.range([ColourManager.similarColour, "#FFFFFF", ColourManager.differentColour]);
 
 		// centre node
 		var centreNodeData = {

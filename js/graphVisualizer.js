@@ -735,7 +735,7 @@ var GraphVisualizer = {
 			// draw
 			for (var similarOrDifferent in linkData.linkInfo) {
 				var countForCurrentSimilarOrDifferent = Object.keys(linkData.linkInfo[similarOrDifferent]).length;
-				var rectColor = self.Message[similarOrDifferent + "Colour"];
+				var rectColor = ColourManager[similarOrDifferent + "Colour"];
 				var rectOpacity = (linkData.opacity == self.Link.lowOpacity && !expand) ? linkData.opacity : 0.7;
 
 				var text = labelGroup.select("text." + similarOrDifferent)
