@@ -14,17 +14,23 @@ var ColourManager = {
 
 		function changeColour() {
 			var currentColour = $('#setting-menu .color-menu select').val();
+			var isRadialLayout = !d3.select(".node.selected").empty();
+			var centreNodeID = isRadialLayout ? d3.select(".node.selected").datum().nodeID : null;
 
 			if (currentColour == "red-green") {
 				$("#color-style").html(self.redGreenCSS);
 				self.similarColour = "#83AF9B";
 				self.differentColour = "#F67280";
+				GraphStructure.updateNodeData(centreNodeID);
+				GraphVisualizer.Node.update();
 			}
 
 			if (currentColour == "colorblind-safe") {
 				$("#color-style").html(self.colourBlindCSS);
 				self.similarColour = "#67a9cf";
 				self.differentColour = "#ef8a62";
+				GraphStructure.updateNodeData(centreNodeID);
+				GraphVisualizer.Node.update();
 			}
 		}
 	},
