@@ -24,6 +24,7 @@ var Database = {
 		self.data = null;
 		self.IDAttr = null;
 		self.numericalAttr = [];
+		self.ordinalNumericalAttr = [];
 		self.categoricalAttr = [];
 		self.binaryAttr = [];
 		self.excludedCategoricalAttr = [];

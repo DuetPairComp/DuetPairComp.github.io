@@ -49,6 +49,14 @@ var groupContainerWidth = 217 - 3; // background left + background right + inner
 var groupContainerHeaderHeight = 25;
 var groupContainerContentHeight = "calc(100% - 26px)";
 
+// dataset menu
+const datasetMenuWidth = 230;
+const datasetMenuHeaderHeight = 30;
+const datasetMenuContentHeight = 150;
+const datasetMenuContentContainerWidth = 'calc(100% - 20px)';
+const datasetMenuContentContainerHeight = 150;
+const datasetMenuFooterHeight = 45;
+
 $(function() {
 	$("body, html")
 		.css("width", full)
@@ -190,6 +198,21 @@ $(function() {
 		.css("height", full)
 		.css("width", full);
 
+	// dataset menu
+	$('#dataset-menu')
+		.css('width', datasetMenuWidth);
+	$('#dataset-menu .header')
+		.css('height', datasetMenuHeaderHeight);
+	$('#dataset-menu .content')
+		.css('width', full)
+		.css('height', datasetMenuContentHeight);
+	$('#dataset-menu .content .container')
+		.css('width', datasetMenuContentContainerWidth)
+		.css('height', datasetMenuContentContainerHeight);
+	$('#dataset-menu .footer')
+		.css('width', full)
+		.css('height', datasetMenuFooterHeight);
+
 	// ----- SVG -----
 
 	// data table
@@ -232,6 +255,7 @@ $(function() {
 		.attr("width", full);
 
 	// init
+	FileSelectorHandler.init();
 	ValueDiscretizer.init();
 	AttributeList.init();
 	DataTable.init();
@@ -243,6 +267,7 @@ $(function() {
 	StoredAttributesPanel.init();
 	LongTitleTooltip.init();
 	ColourManager.init();
+	DatasetMenu.init();
 	Body.init();
 
 	// render interface when the essential font is loaded

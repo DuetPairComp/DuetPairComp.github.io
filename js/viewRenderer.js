@@ -1,8 +1,14 @@
 var ViewRenderer = {
 	renderWithDefaultDataset: function(path) {
-		d3.csv(path, function(d) {
+		// clear views
+		ComparisonShelves.clear();
+		Card.removeAll();
+		RelationshipMap.clear();
+
+		d3.csv(path, function(data) {
 			// load data
-			Database.data = d;
+			Database.clearPreviousData();
+			Database.loadDataIntoMemory(data);
 			Database.DataProcessor.detectID();
 			Database.DataProcessor.detectNumericalAttr();
 			Database.DataProcessor.detectCategoricalAttr();

@@ -33,9 +33,8 @@
 			</div>
 			<div class="file-menu">
 				<span class="title">Data:</span>
-				<span id="file-name">cars.csv</span>
-				<input type="file" id="file-selector"/>
-				<label for="file-selector" class="change-file-button">Change</label>
+				<span class="file-name">cars.csv</span>
+				<span class="fa fa-database change-file-button"></label>
 			</div>
 		</div>
 
@@ -148,6 +147,21 @@
 		</div>
 	</div>
 
+	<div id="dataset-menu" class="noselection ui-view">
+
+		<div class="header">Select a Data set</div>
+
+		<div class="content">
+			<div class="container"><div class="dummy"></div></div>
+		</div>
+
+		<div class="footer">
+			<div class="confirm-btn button"><i class="fa fa-check"></i>Confirm</div>
+			<div class="cancel-btn button"><i class="fa fa-times"></i>Cancel</div>
+		</div>
+
+	</div>
+
 	<div id="draggable-tag" class="noselection not-remove-group-container"></div>
 
 	<div id="system-reasoning-panel" class="ui-view noselection"></div>
@@ -178,6 +192,7 @@
 	<script src="js/longTitleTooltip.js"></script>
 	<script src="js/changeGroupNameManager.js"></script>
 	<script src="js/colourManager.js"></script>
+	<script src="js/datasetMenu.js"></script>
 
 	<script src="js/operator.js"></script>
 	<script src="js/twoGroupOperator.js"></script>
