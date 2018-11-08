@@ -6,6 +6,11 @@ IEEE Transactions on Visualization and Computer Graphics ([IEEE VIS 2018](http:/
 
 <img src="https://s3.us-east-2.amazonaws.com/github-duet/teaser.png"/>
 
+## Working Prototype
+
+There following is a working prototype of Duet. Chrome is recommended as the system was only tested with Chrome.  
+[https://duetpaircomp.github.io](https://duetpaircomp.github.io)
+
 ## System Demo
 
 [This video](https://youtu.be/Y4p0h8_EnDU) showcases the core functionality of Duet. For the details, please refer to [our paper](https://terrancelaw.github.io/publications/duet_vast18.pdf).
