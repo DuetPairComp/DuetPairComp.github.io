@@ -10,6 +10,10 @@ IEEE Transactions on Visualization and Computer Graphics ([IEEE VIS 2018](http:/
 
 [This video](https://youtu.be/Y4p0h8_EnDU) showcases the core functionality of Duet. For the details, please refer to [our paper](https://terrancelaw.github.io/publications/duet_vast18.pdf).
 
+## Supplemental Materials
+
+Other supplemental materials associated with the paper can be found [here](https://github.com/DuetPairComp/supplemental).
+
 ## Contact
 
 Please contact [Terrance Law](https://terrancelaw.github.io) if you have any comments or encounter any issues with the system.
